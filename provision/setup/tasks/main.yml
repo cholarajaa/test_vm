@@ -1,0 +1,13 @@
+- name: Install packages
+  sudo: yes
+  apt: pkg={{item}} state=installed update_cache=yes
+  with_items:
+    # database
+    - postgresql
+    - python-psycopg2
+    - libpq-dev
+
+    # python
+    - python-dev
+    - python-setuptools
+    - python-virtualenv
